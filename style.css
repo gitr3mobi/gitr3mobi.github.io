@@ -1,0 +1,141 @@
+:root {
+	--blue: #002499;
+	--blue-hover: #0038cc;
+	--yellow: #ffc700;
+	--text: #000;
+	--heading-font: 'Ubuntu', sans-serif;
+	--body-font: 'Barlow', sans-serif;
+}
+
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	min-height: 100svh;
+	display: grid;
+	align-items: center;
+	background: #fff url('./fundo.png') center / cover no-repeat;
+	color: var(--text);
+	font-family: var(--body-font);
+	line-height: 1.5;
+}
+
+.container {
+	width: min(100%, 1140px);
+	margin-inline: auto;
+	padding: clamp(24px, 6vw, 68px) clamp(20px, 3vw, 34px);
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+.brand {
+	margin-bottom: 18px;
+}
+
+.hero {
+	display: grid;
+	grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+	align-items: center;
+	gap: clamp(24px, 4vw, 48px);
+}
+
+.hero-content {
+	min-width: 0;
+}
+
+.eyebrow {
+	margin: 0 0 12px;
+	color: var(--blue);
+	font: 700 clamp(1rem, 2vw, 1.25rem)/1.4 var(--heading-font);
+}
+
+h1 {
+	margin: 0;
+	font: 700 clamp(2.5rem, 5vw, 4rem)/1 var(--heading-font);
+	overflow-wrap: break-word;
+}
+
+.highlight {
+	display: block;
+	color: var(--yellow);
+	/* Dark outline retains the original yellow with improved legibility. */
+	-webkit-text-stroke: 1px #715700;
+}
+
+.description {
+	margin: 24px 0;
+	font-size: clamp(1rem, 2vw, 1.125rem);
+}
+
+.button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 60px;
+	max-width: 100%;
+	padding: 16px 28px;
+	background: var(--blue);
+	color: #fff;
+	font: 700 1rem/1.3 var(--heading-font);
+	text-align: center;
+	text-decoration: none;
+	transition: background-color 180ms ease;
+}
+
+.button:hover {
+	background-color: var(--blue-hover);
+}
+
+a:focus-visible {
+	outline: 3px solid var(--blue);
+	outline-offset: 4px;
+}
+
+.hero-image img {
+	margin-inline: auto;
+	width: min(100%, 376px);
+}
+
+.footer {
+	margin-top: clamp(32px, 6vw, 68px);
+	font-size: .875rem;
+	overflow-wrap: anywhere;
+}
+
+.footer p {
+	margin: 0;
+}
+
+.footer a {
+	color: inherit;
+	text-underline-offset: 2px;
+}
+
+@media (max-width: 767px) {
+	.hero {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.hero-image img {
+		width: min(100%, 320px);
+	}
+}
+
+@media (max-width: 480px) {
+	.button {
+		width: 100%;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.button {
+		transition: none;
+	}
+}
